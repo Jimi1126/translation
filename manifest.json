@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "即时翻译",
+  "description": "一个使用Google翻译的即时翻译插件",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "img/icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "contextMenus",
+    "storage"
+  ],
+  "background": {
+    "scripts": [
+      "script/background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "script/content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}
